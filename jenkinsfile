@@ -7,8 +7,9 @@ pipeline {
     stages {
         stage('Cloning Git') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/arun-gupta/docker-kubernetes-hello-world.git']]])     
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'dd620949-fcb7-4923-ba44-4382f480818a', url: 'https://github.com/prasant756/docker-kubernetes-hello-world.git']]])
             }
+
         }
   
     // Building Docker images
